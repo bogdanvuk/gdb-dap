@@ -1,0 +1,357 @@
+Sending: 
+{
+  "command": "disconnect",
+  "arguments": {
+    "restart": false
+  },
+  "type": "request",
+  "seq": 8
+}
+Received:
+{
+  "success": true,
+  "command": "disconnect",
+  "request_seq": 8,
+  "type": "response",
+  "seq": 15
+}
+Received:
+{
+  "body": {
+    "threadId": "1",
+    "reason": "exited"
+  },
+  "event": "thread",
+  "type": "event",
+  "seq": 16
+}
+Sending: 
+{
+  "command": "threads",
+  "type": "request",
+  "seq": 9
+}
+Received:
+{
+  "event": "terminated",
+  "type": "event",
+  "seq": 17
+}
+Debug session process exited with status: killed
+
+Sending: 
+{
+  "command": "initialize",
+  "arguments": {
+    "clientID": "vscode",
+    "clientName": "Visual Studio Code",
+    "adapterID": "gdb",
+    "pathFormat": "path",
+    "linesStartAt1": true,
+    "columnsStartAt1": true,
+    "supportsVariableType": true,
+    "supportsVariablePaging": true,
+    "supportsRunInTerminalRequest": true,
+    "locale": "en-us"
+  },
+  "type": "request",
+  "seq": 1
+}
+Received:
+{
+  "body": {
+    "supportsStepBack": true,
+    "supportsSetVariable": true,
+    "supportsEvaluateForHovers": true,
+    "supportsFunctionBreakpoints": true,
+    "supportsConditionalBreakpoints": true,
+    "supportsConfigurationDoneRequest": true,
+    "supportsHitConditionalBreakpoints": true,
+    "supportsGotoTargetsRequest": true
+  },
+  "success": true,
+  "command": "initialize",
+  "request_seq": 1,
+  "type": "response",
+  "seq": 1
+}
+Sending: 
+{
+  "command": "launch",
+  "arguments": {
+    "type": "gdb",
+    "request": "launch",
+    "name": "GDB::Run<1>",
+    "target": "/tools/home/sprinting/qdac_2_fpga/sw/QDAC/build/test_commands_square",
+    "cwd": "/tools/home/sprinting/qdac_2_fpga/sw/QDAC/test/test_runners/commands/",
+    "dap-server-path": [
+      "node",
+      "/tools/home/.emacs.d/.extension/vscode/webfreak.debug/extension/out/src/gdb.js"
+    ]
+  },
+  "type": "request",
+  "seq": 2
+}
+Received:
+{
+  "event": "initialized",
+  "type": "event",
+  "seq": 2
+}
+Sending: 
+{
+  "command": "setBreakpoints",
+  "arguments": {
+    "source": {
+      "name": "test_square.c",
+      "path": "/tools/home/sprinting/qdac_2_fpga/sw/QDAC/test/test_runners/commands/test_square.c"
+    },
+    "breakpoints": [
+      {
+        "line": 66
+      }
+    ],
+    "sourceModified": false,
+    "lines": [
+      66
+    ]
+  },
+  "type": "request",
+  "seq": 3
+}
+Received:
+{
+  "success": true,
+  "command": "launch",
+  "request_seq": 2,
+  "type": "response",
+  "seq": 3
+}
+Received:
+{
+  "body": {
+    "breakpoints": [
+      {
+        "line": 66,
+        "verified": true
+      }
+    ]
+  },
+  "success": true,
+  "command": "setBreakpoints",
+  "request_seq": 3,
+  "type": "response",
+  "seq": 4
+}
+Sending: 
+{
+  "command": "setExceptionBreakpoints",
+  "arguments": {
+    "filters": []
+  },
+  "type": "request",
+  "seq": 4
+}
+Received:
+{
+  "success": true,
+  "command": "setExceptionBreakpoints",
+  "request_seq": 4,
+  "type": "response",
+  "seq": 5
+}
+Sending: 
+{
+  "command": "configurationDone",
+  "type": "request",
+  "seq": 5
+}
+Received:
+{
+  "body": {
+    "output": "Running executable\n",
+    "category": "console"
+  },
+  "event": "output",
+  "type": "event",
+  "seq": 6
+}
+Received:
+{
+  "body": {
+    "threadId": "1",
+    "reason": "started"
+  },
+  "event": "thread",
+  "type": "event",
+  "seq": 7
+}
+Sending: 
+{
+  "command": "threads",
+  "type": "request",
+  "seq": 6
+}
+Received:
+{
+  "success": true,
+  "command": "configurationDone",
+  "request_seq": 5,
+  "type": "response",
+  "seq": 8
+}
+Received:
+{
+  "body": {
+    "threads": [
+      {
+        "name": "1:test_commands_s",
+        "id": 1
+      }
+    ]
+  },
+  "success": true,
+  "command": "threads",
+  "request_seq": 6,
+  "type": "response",
+  "seq": 9
+}
+Received:
+{
+  "body": {
+    "output": "\n",
+    "category": "console"
+  },
+  "event": "output",
+  "type": "event",
+  "seq": 10
+}
+Received:
+{
+  "body": {
+    "output": "Breakpoint 1, TEST_COMMANDS_SQUARE_test_pol_ () at /tools/home/sprinting/qdac_2_fpga/sw/QDAC/test/test_runners/commands/test_square.c:66\n",
+    "category": "console"
+  },
+  "event": "output",
+  "type": "event",
+  "seq": 11
+}
+Received:
+{
+  "body": {
+    "output": "66\t    char command[] = \"SOUR2:SQU:POL NORM\";\n",
+    "category": "console"
+  },
+  "event": "output",
+  "type": "event",
+  "seq": 12
+}
+Received:
+{
+  "body": {
+    "allThreadsStopped": true,
+    "threadId": 1,
+    "reason": "breakpoint"
+  },
+  "event": "stopped",
+  "type": "event",
+  "seq": 13
+}
+Sending: 
+{
+  "command": "stackTrace",
+  "arguments": {
+    "threadId": 1
+  },
+  "type": "request",
+  "seq": 7
+}
+Received:
+{
+  "body": {
+    "stackFrames": [
+      {
+        "name": "TEST_COMMANDS_SQUARE_test_pol_@0x0000555555557802",
+        "column": 0,
+        "line": 66,
+        "source": {
+          "sourceReference": 0,
+          "path": "/tools/home/sprinting/qdac_2_fpga/sw/QDAC/test/test_runners/commands/test_square.c",
+          "name": "/tools/home/sprinting/qdac_2_fpga/sw/QDAC/test/test_runners/commands/test_square.c"
+        },
+        "id": 1
+      },
+      {
+        "name": "UnityTestRunner@0x000055555557978f",
+        "column": 0,
+        "line": 103,
+        "source": {
+          "sourceReference": 0,
+          "path": "/tools/home/sprinting/qdac_2_fpga/sw/QDAC/lib/unity/fixture/unity_fixture.c",
+          "name": "/tools/home/sprinting/qdac_2_fpga/sw/QDAC/lib/unity/fixture/unity_fixture.c"
+        },
+        "id": 257
+      },
+      {
+        "name": "TEST_COMMANDS_SQUARE_test_pol_run@0x00005555555577d2",
+        "column": 0,
+        "line": 63,
+        "source": {
+          "sourceReference": 0,
+          "path": "/tools/home/sprinting/qdac_2_fpga/sw/QDAC/test/test_runners/commands/test_square.c",
+          "name": "/tools/home/sprinting/qdac_2_fpga/sw/QDAC/test/test_runners/commands/test_square.c"
+        },
+        "id": 513
+      },
+      {
+        "name": "TEST_COMMANDS_SQUARE_GROUP_RUNNER@0x00005555555574f0",
+        "column": 0,
+        "line": 22,
+        "source": {
+          "sourceReference": 0,
+          "path": "/tools/home/sprinting/qdac_2_fpga/sw/QDAC/test/test_runners/commands/test_square.c",
+          "name": "/tools/home/sprinting/qdac_2_fpga/sw/QDAC/test/test_runners/commands/test_square.c"
+        },
+        "id": 769
+      },
+      {
+        "name": "run_tests@0x000055555555958b",
+        "column": 0,
+        "line": 5,
+        "source": {
+          "sourceReference": 0,
+          "path": "/tools/home/sprinting/qdac_2_fpga/sw/QDAC/test/test_group.c",
+          "name": "/tools/home/sprinting/qdac_2_fpga/sw/QDAC/test/test_group.c"
+        },
+        "id": 1025
+      },
+      {
+        "name": "UnityMain@0x00005555555795f9",
+        "column": 0,
+        "line": 45,
+        "source": {
+          "sourceReference": 0,
+          "path": "/tools/home/sprinting/qdac_2_fpga/sw/QDAC/lib/unity/fixture/unity_fixture.c",
+          "name": "/tools/home/sprinting/qdac_2_fpga/sw/QDAC/lib/unity/fixture/unity_fixture.c"
+        },
+        "id": 1281
+      },
+      {
+        "name": "main@0x00005555555595b9",
+        "column": 0,
+        "line": 8,
+        "source": {
+          "sourceReference": 0,
+          "path": "/tools/home/sprinting/qdac_2_fpga/sw/QDAC/test/test_group.c",
+          "name": "/tools/home/sprinting/qdac_2_fpga/sw/QDAC/test/test_group.c"
+        },
+        "id": 1537
+      }
+    ]
+  },
+  "success": true,
+  "command": "stackTrace",
+  "request_seq": 7,
+  "type": "response",
+  "seq": 14
+}
