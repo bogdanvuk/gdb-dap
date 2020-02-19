@@ -1,46 +1,5 @@
 Sending: 
 {
-  "command": "disconnect",
-  "arguments": {
-    "restart": false
-  },
-  "type": "request",
-  "seq": 8
-}
-Received:
-{
-  "success": true,
-  "command": "disconnect",
-  "request_seq": 8,
-  "type": "response",
-  "seq": 15
-}
-Received:
-{
-  "body": {
-    "threadId": "1",
-    "reason": "exited"
-  },
-  "event": "thread",
-  "type": "event",
-  "seq": 16
-}
-Sending: 
-{
-  "command": "threads",
-  "type": "request",
-  "seq": 9
-}
-Received:
-{
-  "event": "terminated",
-  "type": "event",
-  "seq": 17
-}
-Debug session process exited with status: killed
-
-Sending: 
-{
   "command": "initialize",
   "arguments": {
     "clientID": "vscode",
@@ -355,3 +314,43 @@ Received:
   "type": "response",
   "seq": 14
 }
+Sending: 
+{
+  "command": "disconnect",
+  "arguments": {
+    "restart": false
+  },
+  "type": "request",
+  "seq": 8
+}
+Received:
+{
+  "success": true,
+  "command": "disconnect",
+  "request_seq": 8,
+  "type": "response",
+  "seq": 15
+}
+Received:
+{
+  "body": {
+    "threadId": "1",
+    "reason": "exited"
+  },
+  "event": "thread",
+  "type": "event",
+  "seq": 16
+}
+Sending: 
+{
+  "command": "threads",
+  "type": "request",
+  "seq": 9
+}
+Received:
+{
+  "event": "terminated",
+  "type": "event",
+  "seq": 17
+}
+Debug session process exited with status: killed
