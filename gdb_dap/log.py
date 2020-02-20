@@ -6,6 +6,8 @@ DEBUG = True
 import os
 DEBUG_FILE = os.path.join(os.path.dirname(__file__), '__debug_output__.txt')
 
+open(DEBUG_FILE, 'w')
+
 
 def debug(msg):
     if DEBUG:

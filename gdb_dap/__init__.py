@@ -1,1 +1,1 @@
-from .gdb_dap import Session
+from .gdb_dap import GDBRequest, GDBResponse

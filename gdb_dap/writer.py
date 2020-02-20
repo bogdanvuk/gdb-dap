@@ -1,4 +1,5 @@
 from .log import debug_exception, DEBUG, debug
+import time
 import json
 
 def writer_thread(stream, queue):
@@ -6,10 +7,13 @@ def writer_thread(stream, queue):
         while True:
             to_write = queue.get()
 
+            if to_write is None:
+                break
+
             to_write = json.dumps(to_write)
 
             if DEBUG:
-                debug('Writing: %s\n' % (to_write,))
+                debug(f'DAP RESP: {to_write}\n')
 
             if to_write.__class__ == bytes:
                 as_bytes = to_write
@@ -21,3 +25,5 @@ def writer_thread(stream, queue):
             stream.flush()
     except:
         debug_exception()
+
+    debug(f'writer_thread Terminated\n')

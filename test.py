@@ -1,6 +1,6 @@
 import json
-from gdb_dap import Session
-import pprint
+from gdb_dap.gdb_dap import json_process
+from queue import Queue
 
 def test_gdp(log_file):
     json_loading = False
@@ -34,13 +34,12 @@ def test_gdp(log_file):
 
 
     json_res = []
-    setattr(Session, 'output', lambda self, msg: json_res.append(msg))
 
-    session = Session()
+    q_resp = Queue()
     for data in json_in:
-        session.process(data)
-        if session.disconnected:
-            break
+        q_resp.put(data)
+
+    json_process(q_resp, None)
 
     with open('ref.txt', 'w') as f:
         for ref in json_out:

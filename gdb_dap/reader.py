@@ -1,5 +1,6 @@
 from queue import Queue
 import json
+from .log import debug, debug_exception, DEBUG
 
 def read(stream):
     '''
@@ -16,11 +17,12 @@ def read(stream):
         # Interpret the http protocol headers
         line = stream.readline() # The trailing \r\n should be there.
 
-        # if DEBUG:
-        #     debug('read line: >>%s<<\n' % (line.replace('\r', '\\r').replace('\n', '\\n')),)
+        if DEBUG:
+            debug(f'read line: >>{line}<<\n')
 
         if not line:  # EOF
             return None
+
         line = line.strip().decode('ascii')
         if not line:  # Read just a new line without any contents
             if headers:
@@ -55,3 +57,7 @@ def reader_thread(stream, queue: Queue):
     except Exception as e:
         queue.put(None)
         raise e
+    except:
+        debug_exception()
+
+    debug(f'reader_thread Terminated\n')
